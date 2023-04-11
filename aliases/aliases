@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# General Zsh Shortcuts
+
+alias source_zsh='source ~/.zshrc'
+
+alias c='clear'
+alias f='open -a Finder ./'
+alias path='echo -e ${PATH//:/\\n}'
+alias cat='bat' 
+alias ll='exa -alh'
+alias ls='exa'
+alias tree='et'                    # Preferred 'ls' implementation
+alias less='less -FSRXc' 
+alias e='exit'
+alias ~='cd ~'  
+alias cd..='cd ../'  
+alias ..='cd ../'                           # Go back 1 directory level
+alias ...='cd ../../'                       # Go back 2 directory levels
+alias .3='cd ../../../'                     # Go back 3 directory levels
+alias .4='cd ../../../../'                  # Go back 4 directory levels
+alias .5='cd ../../../../../'               # Go back 5 directory levels
+alias .6='cd ../../../../../../' 
+alias myip='curl http://ipecho.net/plain; echo'
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+alias lg='lazygit'
+alias git='LANG=en_US git'
+alias vim=nvim
+
+## Aliases for Custom Scripts
+
+alias autoForward="~/.local/bin/host"

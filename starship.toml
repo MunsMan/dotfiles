@@ -1,0 +1,24 @@
+add_newline = false
+scan_timeout = 10
+
+[character]
+disabled = false 
+success_symbol = "[->](bold green) "
+error_symbol = "[✗](bold red) " 
+
+[status]
+disabled = false
+
+[sudo]
+disabled = false
+
+[directory]
+home_symbol = "🏠"
+
+[rust]
+disabled = false
+# [memory_usage]
+# disabled = false
+# threshold = -1
+# symbol = " "
+# style = "bold dimmed green"

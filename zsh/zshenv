@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+export EDITOR=nvim
+export VISUAL="$EDITOR"
+
+export PATH="/usr/local/Cellar/openvpn/2.5.8/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/qt@5/bin:$PATH"
+export PATH="/usr/local/texlive/2023basic/bin/universal-darwin:$PATH"
+export PATH="$HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin:$PATH"
+
+
+## Plugins
+
+
+### Zellij
+export ZELLIJ_AUTO_ATTACH=True
+export ZELLIJ_CONFIG_DIR=$DOTFILES/zellij
+
+
+### tmux + FzF
+export FZF_CTRL_R_OPTS="--reverse"
+export FZF_TMUX_OPTS="-p"

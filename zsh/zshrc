@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+eval "$(zoxide init zsh)"
+
+# +------------+
+# | ENV         |
+# +------------+
+
+source $DOTFILES/zsh/zshenv
+
+# +------------+
+# | COMPLETION |
+# +------------+
+source $DOTFILES/zsh/completion.zsh
+
+# +------------+
+# | ALIASES    |
+# +------------+
+source $DOTFILES/aliases/aliases
+
+# +------------+
+# | FUNCTIONS  |
+# +------------+
+source $DOTFILES/zsh/functions.zsh
+source $DOTFILES/zellij/zellij_script.sh

@@ -1,0 +1,16 @@
+[[language]]
+name = "markdown"
+language-server = { command = "ltex-ls" }
+text-width = 120
+soft-wrap = { enable = true, wrap-at-text-width = true }
+
+
+[[rust]]
+
+[language.config]
+inlayHints.bindingModeHints.enable = false
+inlayHints.closingBraceHints.minLines = 10
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.typeHints.hideClosureInitialization = true
