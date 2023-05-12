@@ -31,7 +31,7 @@ function tn(){
 }
 
 function remote_vim(){
-   echo "remote neo vim setup" 
+   echo "remote neo vim setup"n
 }
 
 function set-ssh(){
@@ -48,3 +48,16 @@ function set-ssh(){
         echo "Something went wrong, but to finish the setup run:\n" 
         echo "ssh-copy-id -i" "${HOME}/.ssh/keys/${remote_name}" "${remote_address}"        
 }
+
+function latex_pdf(){
+    pdflatex --shell-escape -synctex=1 -interaction=nonstopmode abgabe.tex $1
+}
+
+function s(){
+    nvim $(fzf --preview 'bat --color=always {}' --preview-window '~3')
+}
+
+
+zle -N s
+
+bindkey "^s" s

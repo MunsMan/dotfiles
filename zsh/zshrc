@@ -23,3 +23,8 @@ source $DOTFILES/aliases/aliases
 # +------------+
 source $DOTFILES/zsh/functions.zsh
 source $DOTFILES/zellij/zellij_script.sh
+
+# +------------+
+# | FUNCTIONS  |
+# +------------+
+source $DOTFILES/zsh/shortcuts.zsh
