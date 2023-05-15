@@ -22,11 +22,13 @@ vim.keymap.set("n", "L", "O")
 vim.keymap.set("n", "N", "mzJ`z", { desc = 'Append following with cursor in front' })
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv", { desc = 'next Search Element Centered' })
-vim.keymap.set("n", "N", "Nzzzv", { desc = 'previous Search Element Centered' })
+vim.keymap.set("n", "N", "nzzzv", { desc = 'next Search Element Centered' })
+vim.keymap.set("n", "E", "Nzzzv", { desc = 'previous Search Element Centered' })
 
-vim.keymap.set("n", "f", "e")
 vim.keymap.set("v", "f", "e")
+vim.keymap.set("v", "F", "E")
+vim.keymap.set("n", "f", "e")
+vim.keymap.set("n", "F", "E")
 
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = 'Open Netrw' })
 
