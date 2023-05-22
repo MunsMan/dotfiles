@@ -30,7 +30,7 @@ vim.keymap.set("v", "F", "E")
 vim.keymap.set("n", "f", "e")
 vim.keymap.set("n", "F", "E")
 
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = 'Open Netrw' })
+vim.keymap.set("n", "<leader>e", function() require('oil').open_float() end, { desc = 'Open Netrw' })
 
 
 vim.keymap.set("n", "U", "<C-r>", {})
