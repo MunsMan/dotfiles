@@ -28,7 +28,6 @@ return {
             })
         end
     },
-
     -- LSP
     {
         'neovim/nvim-lspconfig',
@@ -55,8 +54,7 @@ return {
             lsp.configure('lua_ls', {
                 settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
             })
-            lsp.configure({
-                cmd = { "ltex-ls" },
+            lsp.configure('ltex-ls', {
                 filetypes = { "bibtex", "context", "context.tex", "html", "latex", "markdown", "org", "restructuredtext",
                     "rsweave" },
                 flags = { debounce_text_changes = 300 },
@@ -69,12 +67,19 @@ return {
             })
             lsp.on_attach(function(_, bufnr)
                 lsp.default_keymaps({ buffer = bufnr })
-                vim.keymap.set('n', '<leader>dd', vim.diagnostic.open_float, { buffer = true, desc = 'Open Diagnostics' })
+                vim.keymap.set('n', 'go', vim.diagnostic.open_float, { buffer = true, desc = 'Open Diagnostics' })
                 vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { buffer = true, desc = 'Code Actions' })
                 vim.keymap.set('n', '<C-r>', vim.lsp.buf.rename, { buffer = true, desc = 'Rename Symbole' })
-                vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { buffer = true, desc = 'Jump to definition' })
+                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = true, desc = 'Jump to definition' })
                 lsp.buffer_autoformat()
             end)
+            lsp.set_sign_icons({
+                error = '✘',
+                warn = '▲',
+                hint = '⚑',
+                info = '»'
+            })
+
             lsp.setup()
         end
     }
