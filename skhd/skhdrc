@@ -54,10 +54,10 @@ alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 4:4:1:1:2:2
 
 # toggle window split type
-alt - s : yabai -m window --toggle split
+alt - a : yabai -m window --toggle split
 
 # balance size of windows
-shift + alt - 0 : yabai -m space --balance
+shift + alt - t : yabai -m space --balance
 
 # move window and focus desktop
 shift + alt - 1 : yabai -m window --space 1; yabai -m space --focus 1
