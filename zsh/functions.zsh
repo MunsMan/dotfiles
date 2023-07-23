@@ -61,3 +61,8 @@ function s(){
 zle -N s
 
 bindkey "^s" s
+
+
+function wlanPassword(){
+    security find-generic-password -wa "$1"
+}
