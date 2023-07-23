@@ -22,7 +22,6 @@ source $DOTFILES/aliases/aliases
 # | FUNCTIONS  |
 # +------------+
 source $DOTFILES/zsh/functions.zsh
-source $DOTFILES/zellij/zellij_script.sh
 
 # +------------+
 # | FUNCTIONS  |
