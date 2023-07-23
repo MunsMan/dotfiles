@@ -1,4 +1,5 @@
 return {
+    { "folke/neodev.nvim", opts = {} },
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
@@ -28,6 +29,7 @@ return {
             })
         end
     },
+
     -- LSP
     {
         'neovim/nvim-lspconfig',
@@ -49,12 +51,36 @@ return {
             }
         },
         config = function()
+            -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+            require("neodev").setup({
+                -- add any options here, or leave empty to use the default settings
+            })
+
+
             local lsp = require('lsp-zero').preset({})
+            -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+            require("neodev").setup({
+                -- add any options here, or leave empty to use the default settings
+            })
+
+            -- then setup your lsp server as usual
+            local lspconfig = require('lspconfig')
+
+            -- example to setup lua_ls and enable call snippets
+            lspconfig.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        completion = {
+                            callSnippet = "Replace"
+                        }
+                    }
+                }
+            })
             lsp.ensure_installed({ 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'ltex' })
             lsp.configure('lua_ls', {
                 settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
             })
-            lsp.configure('ltex-ls', {
+            lsp.setup('ltex-ls', {
                 filetypes = { "bibtex", "context", "context.tex", "html", "latex", "markdown", "org", "restructuredtext",
                     "rsweave" },
                 flags = { debounce_text_changes = 300 },
