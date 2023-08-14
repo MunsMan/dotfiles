@@ -1,9 +1,9 @@
 keybinding:
   universal:
-    prevItem-alt: 'h'
-    nextItem-alt: 'i'
-    prevBlock-alt: 'n'
-    nextBlock-alt: 'e'
+    prevItem-alt: 'n'
+    nextItem-alt: 'e'
+    prevBlock-alt: 'h'
+    nextBlock-alt: 'i'
     nextMatch: '='
     prevMatch: '-'
     new: 'k'
