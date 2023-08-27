@@ -45,11 +45,6 @@ return {
                 end,
             },
         },
-        opts = {
-            diagnostics = {
-                virtual_text = false,
-            }
-        },
         config = function()
             -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
             require("neodev").setup({
