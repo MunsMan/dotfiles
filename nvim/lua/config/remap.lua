@@ -79,6 +79,3 @@ vim.keymap.set("n", "<leader>xl", function() require("trouble").open("loclist") 
 vim.keymap.set("n", "gR", function() require("trouble").open("lsp_references") end, { desc = "lsp references" })
 
 vim.g.tmux_navigator_no_mappings = 1
-
-
-require("config.remaps.netrw")
