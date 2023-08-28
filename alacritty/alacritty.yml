@@ -8,8 +8,6 @@
 # A cross-platform, OpenGL terminal emulator.
 # https://alacritty.org
 
-
-
 live_config_reload: true
 
 # shell:
@@ -55,6 +53,7 @@ key_bindings:
   - { key: E, mods: Command|Shift, chars: "\x02%" } # split tmux window horizontally
   - { key: F, mods: Command|Shift, chars: "\x02\x5b\x2f" } # start tmux search mode
   - { key: F, mods: Command, chars: "\x02f" } # open file manager 'gokcehan/lf'
+  - { key: D, mods: Command, chars: "\x02d" } # open file manager 'gokcehan/lf'
   - { key: G, mods: Command, chars: "\x02g" } # open git manager 'jesseduffield/lazygit'
   - { key: J, mods: Command, chars: "\x02\x54" } # open t - tmux smart session manager
   - { key: K, mods: Command, chars: "\x02s" } # open interactive tmux session client
@@ -66,7 +65,7 @@ key_bindings:
   - { key: P, mods: Command|Shift, chars: ":GoToCommand\n" } # commands
   # - { key: Period, mods: Command, chars: "\x1b\x20\x2e\x02" } (causes popup to be unfocused)
   - { key: Q, mods: Command, action: "Quit" }
-  - { key: N, mods: Command, action: "CreateNewWindow" } 
+  - { key: N, mods: Command, action: "CreateNewWindow" }
   - { key: R, mods: Command, chars: "\x1b\x5b\x41\x02" }
   - { key: RBracket, mods: Command, chars: "\x09" }
   - { key: RBracket, mods: Command|Shift, chars: "\x02n" }
@@ -80,4 +79,4 @@ key_bindings:
   - { key: I, mods: Control, chars: "\x0c" } # changing C-I to C-L
 
 import:
- - ~/.config/alacritty/themes/themes/one_dark.yaml
+  - ~/.config/alacritty/themes/themes/one_dark.yaml
