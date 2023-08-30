@@ -8,11 +8,6 @@ vim.keymap.set("v", "i", "l")
 vim.keymap.set("n", "h", "h")
 vim.keymap.set("v", "h", "h")
 
--- keeping the next in the same position
--- vim.keymap.set("n", "h", "n")
--- vim.keymap.set("n", "H", "N")
--- mapping insert to m
-
 
 vim.keymap.set("n", "m", "i")
 vim.keymap.set("n", "M", "I")
@@ -47,9 +42,9 @@ vim.keymap.set("v", "E", ":m '<-2<CR>gv=gv")
 vim.keymap.set({ "n", "v" }, "gi", "g_", { desc = 'Move to end of line' })
 vim.keymap.set({ "n", "v" }, "gh", "^", { remap = true, desc = 'Move to first char in line' })
 
--- vim.keymap.set("i", "<Esc>u", "ü")
--- vim.keymap.set("i", "<Esc>a", "ä")
--- vim.keymap.set("i", "<Esc>o", "ö")
-
+vim.keymap.set({ 'n', 'v' }, 'wn', '<cmd>hor split <cr>')
+vim.keymap.set({ 'n', 'v' }, 'we', '<cmd>hor split <cr><C-e>')
+vim.keymap.set({ 'n', 'v' }, 'wh', '<cmd>vert split <cr>')
+vim.keymap.set({ 'n', 'v' }, 'wi', '<cmd>vert split <cr><C-i>')
 
 vim.g.tmux_navigator_no_mappings = 1
