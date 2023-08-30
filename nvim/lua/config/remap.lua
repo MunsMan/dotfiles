@@ -41,13 +41,6 @@ vim.keymap.set("n", "C-p", function() require("telescope.builtin").git_files() e
 vim.keymap.set("n", "<leader>fs", function() require("telescope.builtin").live_grep() end, { desc = 'Open Live Grep' })
 
 
-vim.keymap.set("n", "<leader>s", function() require("harpoon.mark").add_file() end, { desc = 'Mark as Harpoon Target' })
-vim.keymap.set("n", "<leader>h", function() require("harpoon.ui").toggle_quick_menu() end, { desc = 'Open Harpoon Menu' })
-vim.keymap.set("n", "<C-t>", function() require("harpoon.ui").nav_file(1) end, {})
-vim.keymap.set("n", "<C-s>", function() require("harpoon.ui").nav_file(2) end, {})
-vim.keymap.set("n", "<C-p>", function() require("harpoon.ui").nav_file(3) end, {})
-vim.keymap.set("n", "<C-g>", function() require("harpoon.ui").nav_file(4) end, {})
-
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = 'Open Undo Tree' })
 
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
