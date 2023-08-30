@@ -1,3 +1,6 @@
 return {
-	'mbbill/undotree'
+    'mbbill/undotree',
+    keys = {
+        { '<leader>u', vim.cmd.UndotreeToggle, desc = 'Open Undo Tree', mode = 'n' }
+    }
 }

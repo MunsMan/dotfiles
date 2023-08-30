@@ -34,8 +34,6 @@ vim.keymap.set("n", "F", "E")
 vim.keymap.set("n", "U", "<C-r>", {})
 
 
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = 'Open Undo Tree' })
-
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 
 vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "Replace without replacing item" })
