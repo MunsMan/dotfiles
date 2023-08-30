@@ -3,6 +3,7 @@ return {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
         lazy = true,
+        event = 'VeryLazy',
         config = function() require('lsp-zero.settings').preset({}) end,
     },
     -- Autocompletion
@@ -33,20 +34,18 @@ return {
     {
         'neovim/nvim-lspconfig',
         cmd = 'LspInfo',
-        event = { 'BufReadPre', 'BufNewFile' },
+        event = 'VeryLazy',
         dependencies = {
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'williamboman/mason-lspconfig.nvim' },
             {
                 'williamboman/mason.nvim',
-                build = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
+                keys = { { '<leader>cm', '<cmd>Mason<cr>', desc = 'Mason' } },
+                build = ':MasonUpdate'
             },
         },
         config = function()
             local lsp = require('lsp-zero').preset({})
-            })
 
             -- then setup your lsp server as usual
             local lspconfig = require('lspconfig')
@@ -64,17 +63,6 @@ return {
             lsp.ensure_installed({ 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'ltex' })
             lsp.configure('lua_ls', {
                 settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
-            })
-            lsp.setup('ltex-ls', {
-                filetypes = { "bibtex", "context", "context.tex", "html", "latex", "markdown", "org", "restructuredtext",
-                    "rsweave" },
-                flags = { debounce_text_changes = 300 },
-                settings = {
-                    ltex = {
-                        -- language = "en"
-                        language = "de-DE"
-                    }
-                },
             })
             lsp.on_attach(function(_, bufnr)
                 lsp.default_keymaps({ buffer = bufnr })
