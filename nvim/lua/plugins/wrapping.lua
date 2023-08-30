@@ -14,5 +14,6 @@ return {
             "tex",
             "text",
         },
-    }
+    },
+    keys = { 'cw', '<cmd>ToggleWrapMode<cr>' }
 }
