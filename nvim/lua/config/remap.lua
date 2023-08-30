@@ -33,11 +33,6 @@ vim.keymap.set("n", "F", "E")
 
 vim.keymap.set("n", "U", "<C-r>", {})
 
-vim.keymap.set("n", "<leader>ff", function() require("telescope.builtin").find_files() end,
-    { desc = 'Open File Fuzzy Finder' })
-vim.keymap.set("n", "C-p", function() require("telescope.builtin").git_files() end, {})
-vim.keymap.set("n", "<leader>fs", function() require("telescope.builtin").live_grep() end, { desc = 'Open Live Grep' })
-
 
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = 'Open Undo Tree' })
 
