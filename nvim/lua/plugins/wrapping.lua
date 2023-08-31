@@ -1,8 +1,5 @@
 return {
     "andrewferrier/wrapping.nvim",
-    config = function()
-        require("wrapping").setup()
-    end,
     opts = {
         auto_set_mode_filetype_allowlist = {
             "asciidoc",
@@ -15,5 +12,11 @@ return {
             "text",
         },
     },
-    keys = { 'cw', '<cmd>ToggleWrapMode<cr>' }
+    keys = {
+        {
+            '<leader>cw',
+            function() require('wrapping').toggle_wrap_mode() end,
+            desc = "Toggle Wrap Mode"
+        }
+    }
 }
