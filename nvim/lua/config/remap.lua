@@ -42,9 +42,9 @@ vim.keymap.set("v", "E", ":m '<-2<CR>gv=gv")
 vim.keymap.set({ "n", "v" }, "gi", "g_", { desc = 'Move to end of line' })
 vim.keymap.set({ "n", "v" }, "gh", "^", { remap = true, desc = 'Move to first char in line' })
 
-vim.keymap.set({ 'n', 'v' }, 'wn', '<cmd>hor split <cr>')
-vim.keymap.set({ 'n', 'v' }, 'we', '<cmd>hor split <cr><C-e>')
-vim.keymap.set({ 'n', 'v' }, 'wh', '<cmd>vert split <cr>')
-vim.keymap.set({ 'n', 'v' }, 'wi', '<cmd>vert split <cr><C-i>')
+vim.keymap.set({ 'n', 'v' }, '<leader>wn', '<cmd>hor split <cr>')
+vim.keymap.set({ 'n', 'v' }, '<leader>we', '<cmd>hor split <cr><C-e>')
+vim.keymap.set({ 'n', 'v' }, '<leader>wh', '<cmd>vert split <cr>')
+vim.keymap.set({ 'n', 'v' }, '<leader>wi', '<cmd>vert split <cr><C-i>')
 
 vim.g.tmux_navigator_no_mappings = 1
