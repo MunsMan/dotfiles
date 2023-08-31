@@ -31,6 +31,12 @@ return {
             mode = { 'n', 'v' }
         },
         {
+            '<leader>fb',
+            function() require('telescope.builtin').buffers() end,
+            desc = 'Telescope Buffers',
+            mode = { 'n', 'v' }
+        },
+        {
             'gI',
             function() require('telescope.builtin').lsp_implementations({ reuse_win = true }) end,
             desc = 'Goto Implementation'
