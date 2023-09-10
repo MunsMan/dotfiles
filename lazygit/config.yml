@@ -1,27 +1,30 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
 keybinding:
   universal:
-    prevItem-alt: 'e'
-    nextItem-alt: 'n'
-    prevBlock-alt: 'h'
-    nextBlock-alt: 'i'
-    nextMatch: '='
-    prevMatch: '-'
-    new: 'k'
-    edit: 'o'
-    openFile: 'O'
-    scrollUpMain-alt1: 'U'
-    scrollDownMain-alt1: 'E'
-    scrollUpMain-alt2: '<c-u>'
-    scrollDownMain-alt2: '<c-e>'
-    undo: 'l'
-    redo: '<c-r>'
-    diffingMenu: 'M'
-    filteringMenu: '<c-f>'
+    prevItem-alt: "e"
+    nextItem-alt: "n"
+    prevBlock-alt: "h"
+    nextBlock-alt: "i"
+    nextMatch: "="
+    prevMatch: "-"
+    new: "k"
+    edit: "o"
+    openFile: "O"
+    scrollUpMain-alt1: "U"
+    scrollDownMain-alt1: "E"
+    scrollUpMain-alt2: "<c-u>"
+    scrollDownMain-alt2: "<c-e>"
+    undo: "l"
+    redo: "<c-r>"
+    diffingMenu: "M"
+    filteringMenu: "<c-f>"
   files:
-    ignoreFile: 'I'
+    ignoreFile: "I"
   commits:
-    moveDownCommit: '<c-e>'
-    moveUpCommit: '<c-u>'
+    moveDownCommit: "<c-e>"
+    moveUpCommit: "<c-u>"
   branches:
-    viewGitFlowOptions: 'I'
-    setUpstream: 'U'
+    viewGitFlowOptions: "I"
+    setUpstream: "U"
+os:
+  editPreset: "nvim"
