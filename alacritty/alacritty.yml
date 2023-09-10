@@ -21,6 +21,16 @@ live_config_reload: true
 #     - -s
 #     - main
 
+import:
+  - ~/.config/alacritty/themes/themes/one_dark.yaml
+
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+    - -c
+    - /Users/munsman/.local/scripts/tmux/tmux_start.sh
+
 env:
   TERM: xterm-256color
 
@@ -38,7 +48,11 @@ font:
     style: Regular
   size: 16.0
 
+hints:
+  hyperlinks: true
+
 key_bindings:
+  # TMUX Shortcuts
   - { key: Key1, mods: Command, chars: "\x021" } # select tmux window 1
   - { key: Key2, mods: Command, chars: "\x022" } #                ... 2
   - { key: Key3, mods: Command, chars: "\x023" } #                ... 3
@@ -51,32 +65,22 @@ key_bindings:
   - { key: Comma, mods: Command, chars: "\x02," } # rename the current tmux window
   - { key: E, mods: Command, chars: "\x02\"" } # split tmux window vertically
   - { key: E, mods: Command|Shift, chars: "\x02%" } # split tmux window horizontally
-  - { key: F, mods: Command|Shift, chars: "\x02\x5b\x2f" } # start tmux search mode
-  - { key: F, mods: Command, chars: "\x02f" } # open file manager 'gokcehan/lf'
+  - { key: F, mods: Command, chars: "\x02f" } # start tmux search mode
   - { key: D, mods: Command, chars: "\x02d" } # open file manager 'gokcehan/lf'
   - { key: G, mods: Command, chars: "\x02g" } # open git manager 'jesseduffield/lazygit'
+  - { key: O, mods: Command, chars: "\x02o" } # open nvim with second-brain
   - { key: J, mods: Command, chars: "\x02\x54" } # open t - tmux smart session manager
   - { key: K, mods: Command, chars: "\x02s" } # open interactive tmux session client
   - { key: L, mods: Command, chars: "\x02L" } # switch to the last tmux session
-  - { key: LBracket, mods: Command, chars: "\x0f" } # navigate back (ctrl+o)
-  - { key: LBracket, mods: Command|Shift, chars: "\x02p" } # switch to next tmux window
-  - { key: O, mods: Command, chars: "\x02u" }
-  - { key: P, mods: Command, chars: ":GoToFile\n" } # files
-  - { key: P, mods: Command|Shift, chars: ":GoToCommand\n" } # commands
-  # - { key: Period, mods: Command, chars: "\x1b\x20\x2e\x02" } (causes popup to be unfocused)
-  - { key: Q, mods: Command, action: "Quit" }
-  - { key: N, mods: Command, action: "CreateNewWindow" }
-  - { key: R, mods: Command, chars: "\x1b\x5b\x41\x02" }
-  - { key: RBracket, mods: Command, chars: "\x09" }
-  - { key: RBracket, mods: Command|Shift, chars: "\x02n" }
-  - { key: S, mods: Command, chars: "\x1b\x3a\x77\x02" } # save vim buffer
-  - { key: S, mods: Command|Shift, chars: ":wa\n" } # save all
+  - { key: LBracket, mods: Command|Shift, chars: "\x02p" } # switch to previous tmux window
+  - { key: RBracket, mods: Command|Shift, chars: "\x02P" } # switch to next tmux window
   - { key: Semicolon, mods: Command, chars: "\x02:" } # enter the tmux command prompt
+
   - { key: T, mods: Command, chars: "\x02c" } # create a new tmux window
   - { key: W, mods: Command, chars: "\x02x" } # kill the current pane
   - { key: Z, mods: Command, chars: "\x02z" } # toggle zoom state of the current tmux pane
-
+  # Keyboard Commands
   - { key: I, mods: Control, chars: "\x0c" } # changing C-I to C-L
-
-import:
-  - ~/.config/alacritty/themes/themes/one_dark.yaml
+  # Alacritty Commands
+  - { key: Q, mods: Command, action: "Quit" }
+  - { key: N, mods: Command, action: "SpawnNewInstance" }
