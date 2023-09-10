@@ -11,8 +11,10 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-        { import = "plugins" } },
+require("lazy").setup(
+    {
+        { import = "plugins" }
+    },
     {
         install = {
             colorscheme = { 'onedark' }
@@ -25,5 +27,6 @@ require("lazy").setup({
             notify = false
         }
 
-    })
+    }
+)
 -- catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
