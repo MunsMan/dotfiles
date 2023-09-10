@@ -9,13 +9,14 @@ return {
             },
             sections = {
                 lualine_a = { 'mode' },
-                lualine_b = { 'branch', 'diff', 'diagnostics' },
+                lualine_b = { { 'branch', icons_enabled = true, icon = '󰘬 ' },
+                    { 'diff' }, 'diagnostics' },
                 lualine_c = { 'filename' },
                 lualine_x = {
                     {
                         lazy_status.updates,
                         cond = lazy_status.has_updates
-                    }, { 'encoding' }, { 'fileformat' }, { 'filetype' },
+                    }, { 'encoding' }, { 'filetype' },
                 }
                 ,
                 lualine_y = { 'progress' },
