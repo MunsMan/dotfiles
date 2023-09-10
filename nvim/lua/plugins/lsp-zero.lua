@@ -79,6 +79,11 @@ return {
                 vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { buffer = true, desc = 'Code Actions' })
                 vim.keymap.set('n', '<C-r>', vim.lsp.buf.rename, { buffer = true, desc = 'Rename Symbole' })
                 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = true, desc = 'Jump to definition' })
+                vim.keymap.set('n', 'gI', vim.lsp.buf.implementation, { buffer = true, desc = 'Jump to Implementation' })
+                vim.keymap.set('n', 'gr', vim.lsp.buf.references, { buffer = true, desc = 'Show References' })
+                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = true, desc = 'Jump to Declaration' })
+                vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition,
+                    { buffer = true, desc = 'Jump to Type Definition' })
                 lsp.buffer_autoformat()
             end)
             lsp.set_sign_icons({

@@ -9,7 +9,7 @@ return {
         { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
         { "<leader>xl", "<cmd>TroubleToggle loclist<cr>",               desc = "Location List (Trouble)" },
         { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",              desc = "Quickfix List (Trouble)" },
-        { "gr",         "<cmd>TroubleToggle lsp_references<cr>",        desc = "Lsp references (Trouble)" },
+        { "<leader>xr", "<cmd>TroubleToggle lsp_references<cr>",        desc = "Lsp references (Trouble)" },
         {
             "[q",
             function()
