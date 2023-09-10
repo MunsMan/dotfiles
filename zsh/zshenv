@@ -2,6 +2,7 @@
 
 export EDITOR=nvim
 export VISUAL="$EDITOR"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 export PATH="/usr/local/Cellar/openvpn/2.5.8/sbin:$PATH"
 export PATH="/usr/local/sbin:$PATH"

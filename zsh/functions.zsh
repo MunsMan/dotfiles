@@ -57,12 +57,6 @@ function s(){
     nvim $(fzf --preview 'bat --color=always {}' --preview-window '~3')
 }
 
-
-zle -N s
-
-bindkey "^s" s
-
-
 function wlanPassword(){
     security find-generic-password -wa "$1"
 }
