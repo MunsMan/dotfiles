@@ -59,5 +59,6 @@
         "/Users/munsman/.config/nvim/lua",
         "/Users/munsman/.config/nvim/lua",
         "${3rd}/luv/library"
-    ]
+    ],
+    "workspace.checkThirdParty": false
 }
