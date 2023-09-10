@@ -1,5 +1,6 @@
 return {
     "andrewferrier/wrapping.nvim",
+    ft = { 'markdown' },
     opts = {
         auto_set_mode_filetype_allowlist = {
             "asciidoc",
@@ -11,6 +12,7 @@ return {
             "tex",
             "text",
         },
+        softener = { markdown = 1.3 },
     },
     keys = {
         {
