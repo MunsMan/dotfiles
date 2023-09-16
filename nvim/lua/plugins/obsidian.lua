@@ -47,6 +47,11 @@ return {
             end
             return out
         end,
+        follow_url_func       = function(url)
+            -- Open the URL in the default web browser.
+            vim.fn.jobstart({ "open", url }) -- Mac OS
+            -- vim.fn.jobstart({"xdg-open", url})  -- linux
+        end,
     },
     setup = function(_, opts)
         require('obsidian').setup(opts)
@@ -81,7 +86,7 @@ return {
         },
         { '<leader>nd', '<cmd>ObsidianToday<cr>',       desc = 'open today\'s note' },
         { '<leader>ns', '<cmd>ObsidianSearch<cr>',      desc = 'note text search' },
-        { '<leader>nl', '<cmd>ObsidianLink<cr>',        desc = 'link note',            mode = { 'v', 'n' } },
+        { '<leader>nl', '<cmd>ObsidianFollowLink<cr>',  desc = 'open link',            mode = { 'v', 'n' } },
         { '<leader>nb', '<cmd>ObsidianBacklinks<cr>',   desc = 'note text search' },
         { '<leader>no', '<cmd>ObsidianOpen<cr>',        desc = 'open note in obsidian' },
         { '<leader>nf', '<cmd>ObsidianQuickSwitch<cr>', desc = 'open note' },
