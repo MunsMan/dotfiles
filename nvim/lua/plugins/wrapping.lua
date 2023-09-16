@@ -12,8 +12,15 @@ return {
             "tex",
             "text",
         },
-        softener = { markdown = 1.3 },
+        softener = { markdown = 1.6 },
+        notify_on_switch = false,
+        create_keymaps = false
     },
+    config = function(_, opts)
+        require('wrapping').setup(opts)
+        vim.keymap.set("n", "n", 'gj')
+        vim.keymap.set("n", "e", 'gk')
+    end,
     keys = {
         {
             '<leader>cw',
