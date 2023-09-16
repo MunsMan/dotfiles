@@ -22,7 +22,7 @@ live_config_reload: true
 #     - main
 
 import:
-  - ~/.config/alacritty/themes/themes/one_dark.yaml
+  - ~/.config/alacritty/themes/one_dark.yaml
 
 shell:
   program: /bin/zsh
