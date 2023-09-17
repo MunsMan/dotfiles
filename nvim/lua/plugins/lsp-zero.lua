@@ -97,9 +97,6 @@ return {
                 }
             })
             lsp.ensure_installed({ 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'ltex' })
-            lsp.configure('lua_ls', {
-                settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
-            })
             lsp.on_attach(function(_, bufnr)
                 lsp.default_keymaps({ buffer = bufnr })
                 vim.keymap.set('n', 'go', vim.diagnostic.open_float, { buffer = true, desc = 'Open Diagnostics' })
