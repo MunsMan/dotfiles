@@ -12,7 +12,7 @@ return {
             'tex',
             'text',
         },
-        softener = { markdown = 1.6 },
+        softener = { markdown = 1.6, latex = true },
         notify_on_switch = false,
         create_keymaps = false
     },
@@ -20,6 +20,8 @@ return {
         require('wrapping').setup(opts)
         vim.keymap.set({ 'n', 'v' }, 'n', 'gj')
         vim.keymap.set({ 'n', 'v' }, 'e', 'gk')
+        vim.keymap.set({ 'n', 'v' }, 'gi', 'g$')
+        vim.keymap.set({ 'n', 'v' }, 'gh', 'g0')
     end,
     keys = {
         {
