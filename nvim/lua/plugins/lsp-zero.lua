@@ -59,6 +59,7 @@ return {
             -- then setup your lsp server as usual
             local lspconfig = require('lspconfig')
 
+            lsp.ensure_installed({ 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'ltex' })
             -- example to setup lua_ls and enable call snippets
             lspconfig.lua_ls.setup({
                 commands = {
@@ -96,7 +97,6 @@ return {
                     },
                 }
             })
-            lsp.ensure_installed({ 'tsserver', 'eslint', 'lua_ls', 'rust_analyzer', 'ltex' })
             lsp.on_attach(function(_, bufnr)
                 lsp.default_keymaps({ buffer = bufnr })
                 vim.keymap.set('n', 'go', vim.diagnostic.open_float, { buffer = true, desc = 'Open Diagnostics' })
