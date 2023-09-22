@@ -44,8 +44,8 @@ window:
   #option_as_alt: Both
 font:
   normal:
-    family: "FiraCode Nerd Font"
-    style: Regular
+    family: JetBrainsMono Nerd Font
+    style: Medium
   size: 16.0
 
 hints:
