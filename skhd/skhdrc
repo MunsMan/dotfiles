@@ -83,3 +83,6 @@ alt - tab : yabai -m space --focus recent
 # focus other monitor
 ctrl + alt - n : yabai -m display --focus next
 ctrl + alt - e : yabai -m display --focus prev
+
+# restart yabai
+ctrl + alt + cmd - r : yabai --restart-service"
