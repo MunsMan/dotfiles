@@ -1,5 +1,7 @@
 return {
     'epwalsh/obsidian.nvim',
+    -- dir = '/Users/munsman/Code/obsidian.nvim/worktree/dailyTemplate/',
+    -- name = 'obsidian.nvim',
     -- docs: https://github.com/epwalsh/obsidian.nvim
     lazy = true,
     event = {
@@ -13,7 +15,8 @@ return {
         dir                   = "/Users/munsman/Library/Mobile Documents/iCloud~md~obsidian/Documents/second-brain",
 
         daily_notes           = {
-            folder = 'daily'
+            folder = 'daily',
+            template = 'daily.md',
         },
         completion            = {
             nvim_cmp = true,
@@ -24,6 +27,11 @@ return {
         templates             = {
             subdir = "templates",
             date_format = "%Y-%m-%d",
+            substitutions = {
+                yesterday = function()
+                    return os.date("%Y-%m-%d", os.time() - 86400)
+                end
+            }
         },
         mappings              = {},
         open_notes_in         = 'current',
