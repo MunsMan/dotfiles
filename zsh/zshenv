@@ -17,3 +17,6 @@ export LC_ALL=en_US.UTF-8
 ### tmux + FzF
 export FZF_CTRL_R_OPTS="--reverse"
 export FZF_TMUX_OPTS="-p"
+
+### NVM ~ Node Version Manager
+export NVM_DIR="$HOME/.nvm"

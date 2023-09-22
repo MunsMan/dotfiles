@@ -99,3 +99,7 @@ zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f
 source $DOTFILES/zsh/plugins/kubectl-completion/_kubectl
 zstyle ':completion:*:*:kubectl:*' list-grouped false
 autoload -Uz $DOTFILES/zsh/plugins/kubectl-completion/zsh-kubectl-completion
+
+## NVM
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+

@@ -1,11 +1,12 @@
 #!/bin/zsh
 
 eval "$(zoxide init zsh)"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
 
 # +------------+
 # | ENV         |
 # +------------+
-
 source $DOTFILES/zsh/zshenv
 
 # +------------+
@@ -24,6 +25,6 @@ source $DOTFILES/aliases/aliases
 source $DOTFILES/zsh/functions.zsh
 
 # +------------+
-# | FUNCTIONS  |
+# | SHOTCUTS   |
 # +------------+
 source $DOTFILES/zsh/shortcuts.zsh
