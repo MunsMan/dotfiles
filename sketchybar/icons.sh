@@ -1,7 +1,7 @@
-export APPLE_ICON=􀣺
+export APPLE_ICON=
 
-export WIFI_DISCONN_ICON=􀙈
-export WIFI_CONN_ICON=􀙇
+export WIFI_DISCONN_ICON=󰖪
+export WIFI_CONN_ICON=󰖩
 
 export BATTERY_BOLT_ICON=􀢋
 export BATTERY_100_ICON=􀛨
