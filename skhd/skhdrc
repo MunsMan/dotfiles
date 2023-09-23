@@ -5,12 +5,12 @@ alt - e : yabai -m window --focus north
 alt - i : yabai -m window --focus east
 
 # focus desktop
-# alt - h : yabai -m display --focus next
-# alt - y : yabai -m display --focus previous
-# ctrl + alt - 1 : yabai -m display --focus 1
-# ctrl + alt - 2 : yabai -m display --focus 2
-# ctrl + alt - 3 : yabai -m display --focus 3
-# ctrl + alt - 4 : yabai -m display --focus 4
+ctrl + alt - 1 : yabai -m display --focus 1
+ctrl + alt - 2 : yabai -m display --focus 2
+ctrl + alt - 3 : yabai -m display --focus 3
+ctrl + alt - 4 : yabai -m display --focus 4
+alt - l : yabai -m display --focus next
+alt - u : yabai -m display --focus prev
 
 # # focus space
 # ctrl - 1 : yabai -m space --focus 1 
@@ -79,10 +79,6 @@ shift + alt - o : yabai -m space --create && \
 
 # fast focus desktop
 alt - tab : yabai -m space --focus recent
-
-# focus other monitor
-ctrl + alt - n : yabai -m display --focus next
-ctrl + alt - e : yabai -m display --focus prev
 
 # restart yabai
 ctrl + alt + cmd - r : yabai --restart-service"
