@@ -3,6 +3,7 @@ return {
     tag = '0.1.1',
     -- or                              , branch = '0.1.1',
     dependencies = { 'nvim-lua/plenary.nvim' },
+    lazy = true,
     cmd = 'Telescope',
     version = false,
     opts = {
@@ -25,9 +26,15 @@ return {
             mode = { 'n', 'v' }
         },
         {
-            '<leader>fs',
+            '<leader>fg',
             function() require('telescope.builtin').live_grep() end,
             desc = 'Open Live Grep',
+            mode = { 'n', 'v' }
+        },
+        {
+            '<leader>fs',
+            function() require('telescope.builtin').lsp_document_symbols() end,
+            desc = 'Telescope document symbols',
             mode = { 'n', 'v' }
         },
         {
@@ -37,14 +44,10 @@ return {
             mode = { 'n', 'v' }
         },
         {
-            'gI',
-            function() require('telescope.builtin').lsp_implementations({ reuse_win = true }) end,
-            desc = 'Goto Implementation'
-        },
-        {
-            'gt',
-            function() require('telescope.builtin').lsp_type_definitions({ reuse_win = true }) end,
-            desc = 'Goto T[y]pe Definition'
+            '<leader>fe',
+            function() require('telescope.builtin').diagnostics() end,
+            desc = 'Telescope Errors',
+            mode = { 'n', 'v' }
         },
     }
 }
