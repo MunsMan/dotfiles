@@ -18,7 +18,7 @@ read_only = " "
 
 [git_status]
 conflicted = "  "
-deleted = " 﫧×${count}"
+deleted = " 󰆴×${count}"
 modified = "  ×${count}"
 stashed = "  ×${count}"
 staged = "  ×${count}"
@@ -140,7 +140,7 @@ Unknown = " "
 Windows = " "
 
 [package]
-symbol = " "
+symbol = " "
 
 [pijul_channel]
 symbol = "🪺 "
