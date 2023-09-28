@@ -3,6 +3,12 @@ return {
     lazy = false,
     opts = {
         default_file_explorer = true,
+        columns = {
+            'icon',
+            -- "permissions",
+            -- "size",
+            -- "mtime",
+        },
         skip_confirm_for_simple_edits = true,
         view_options = {
             show_hidden = true
@@ -16,6 +22,10 @@ return {
         },
         preview = {
             width = 0.4
+        },
+        keymaps = {
+            ['<C-n>'] = 'actions.select_split',
+            ['<C-l>'] = 'actions.select_vsplit'
         }
     },
     -- Optional dependencies
