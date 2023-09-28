@@ -60,3 +60,11 @@ function s(){
 function wlanPassword(){
     security find-generic-password -wa "$1"
 }
+
+function brew() {
+  command brew "$@" 
+
+  if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
+    sketchybar --trigger brew_update
+  fi
+}
