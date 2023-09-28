@@ -11,9 +11,7 @@ return -- lazy.nvim
                 ["cmp.entry.get_documentation"] = true,
             },
             progress = {
-                message = {
-                    enabled = false
-                }
+                enabled = false
             }
         },
         messages = {

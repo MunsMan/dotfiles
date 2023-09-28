@@ -72,6 +72,7 @@ return {
             group = vim.api.nvim_create_augroup('UserLspConfig', {}),
             callback = function(ev)
                 vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+                on_attach(_, ev.buf)
             end
         })
 
