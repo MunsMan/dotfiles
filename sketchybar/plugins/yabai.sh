@@ -49,7 +49,7 @@ windows_on_spaces () {
   do
     for space in $line
     do
-      icon_strip=" "
+      icon_strip=""
       apps=$(yabai -m query --windows --space $space | jq -r ".[].app")
       if [ "$apps" != "" ]; then
         while IFS= read -r app; do

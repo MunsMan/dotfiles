@@ -17,8 +17,6 @@ update() {
   # For sound to play around with:
   # afplay /System/Library/Sounds/Morse.aiff
 
-  args+=(--remove '/github.notification\.*/')
-
   COUNTER=0
   COLOR=$BLUE
   args+=(--set github.bell icon.color=$COLOR)
