@@ -45,7 +45,7 @@ window:
 font:
   normal:
     family: JetBrainsMono Nerd Font
-    style: Medium
+    style: Regular
   size: 16.0
 
 hints:
