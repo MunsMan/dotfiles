@@ -1,5 +1,3 @@
-sketchybar --add event window_change
-
 COLORS_SPACE=($YELLOW $CYAN $MAGENTA $WHITE $BLUE $RED $GREEN)
 LENGTH=${#ICONS_SPACE[@]}
 
@@ -29,6 +27,7 @@ do
              --subscribe space.$sid front_app_switched window_change
 done
 
+sketchybar --add event window_change
 sketchybar --add bracket spaces '/space\..*/'                      \
            --set         spaces background.color=$COLOR_BACKGROUND
 
