@@ -1,6 +1,6 @@
 return {
     "jose-elias-alvarez/null-ls.nvim",
-    event = { 'BufWritePre' },
+    lazy = true,
     opts = function(_, _opts)
         local nls = require("null-ls")
         nls.setup({

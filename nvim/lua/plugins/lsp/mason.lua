@@ -14,6 +14,7 @@ return {
 
         -- import mason-null-ls
         local mason_null_ls = require("mason-null-ls")
+        require('null-ls')
 
         -- enable mason and configure icons
         mason.setup({

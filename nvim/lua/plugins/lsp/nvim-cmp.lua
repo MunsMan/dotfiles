@@ -35,7 +35,7 @@ return {
                 ["<C-d>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-u>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-                ["C-x"] = cmp.mapping.abort(),          -- close completion window
+                ["<C-x>"] = cmp.mapping.abort(),        -- close completion window
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
             }),
             -- sources for autocompletion

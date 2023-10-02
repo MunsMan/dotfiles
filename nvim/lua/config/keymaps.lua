@@ -45,4 +45,5 @@ vim.keymap.set({ 'n', 'v' }, '<leader>we', '<cmd>hor split <cr><C-e>')
 vim.keymap.set({ 'n', 'v' }, '<leader>wh', '<cmd>vert split <cr>')
 vim.keymap.set({ 'n', 'v' }, '<leader>wi', '<cmd>vert split <cr><C-i>')
 
+
 vim.g.tmux_navigator_no_mappings = 1
