@@ -41,6 +41,7 @@ window:
     y: 5
   dynamic_padding: false
   decorations: buttonless
+  dynamic_title: true
   #option_as_alt: Both
 font:
   normal:
