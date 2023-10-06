@@ -114,7 +114,7 @@ case "$1" in
 "Disk Utility")
 	RESULT=$ICON_DISK
 	;;
-"Screenshot" | "Preview")
+"Screenshot" | "Preview" | "Skim")
 	RESULT=$ICON_PREVIEW
 	;;
 "1Password")
