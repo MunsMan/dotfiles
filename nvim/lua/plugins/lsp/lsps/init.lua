@@ -17,14 +17,23 @@ local function mergeTables(table1, table2)
     end
 end
 
+local function setup_default(opts)
+    require("mason-lspconfig").setup_handlers({
+        function(server_name)
+            require("lspconfig")[server_name].setup(opts)
+        end,
+    })
+end
+
 return {
-    setup = function (opts)
-        local configDir = 'plugins.lsp.lsps.'
-        local files = vim.split(vim.fn.glob('~/.config/nvim/lua/plugins/lsp/lsps/*.lua'), '\n')
+    setup = function(opts)
+        setup_default(opts)
+        local configDir = "plugins.lsp.lsps."
+        local files = vim.split(vim.fn.glob("~/.config/nvim/lua/plugins/lsp/lsps/*.lua"), "\n")
         for _, b in pairs(files) do
             for w in string.gmatch(b, "[^/]+%.lua") do
-                local configName, _ = w:gsub('%.lua$', '')
-                if configName == 'init' then
+                local configName, _ = w:gsub("%.lua$", "")
+                if configName == "init" then
                     goto continue
                 end
                 local config = require(configDir .. configName)
@@ -32,5 +41,5 @@ return {
                 ::continue::
             end
         end
-    end
+    end,
 }
