@@ -6,8 +6,8 @@ MIC_VOLUME=$(osascript -e 'input volume of (get volume settings)')
 
 if [[ $MIC_VOLUME -eq 0 ]]; then
   osascript -e 'set volume input volume 25'
-  sketchybar -m --set mic icon="$MIC" icon.color="$WHITE"
+  sketchybar -m --set mic icon="$MIC" icon.color="$RED"
 elif [[ $MIC_VOLUME -gt 0 ]]; then
   osascript -e 'set volume input volume 0'
-  sketchybar -m --set mic icon="$MIC_MUTED" icon.color="$RED"
+  sketchybar -m --set mic icon="$MIC_MUTED" icon.color="$GREEN"
 fi
