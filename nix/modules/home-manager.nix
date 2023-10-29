@@ -7,7 +7,7 @@ let
 
                         inherit username;
                         homeDirectory = "/Users/${username}";
-                        stateVersion = "23.11";
+                        stateVersion = "23.05";
 
         };
 
