@@ -1,5 +1,4 @@
 **/node_modules/
-zsh/plugins/*
 raycast/extensions
 raycast/config.json
 lazygit/state.yml
