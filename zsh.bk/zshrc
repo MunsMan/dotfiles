@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+eval "$(zoxide init zsh)"
+eval "$(direnv hook zsh)"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+
+
+# +------------+
+# | ENV         |
+# +------------+
+source $DOTFILES/zsh/zshenv
+
+# +------------+
+# | COMPLETION |
+# +------------+
+source $DOTFILES/zsh/completion.zsh
+
+# +------------+
+# | ALIASES    |
+# +------------+
+source $DOTFILES/aliases/aliases
+
+# +------------+
+# | FUNCTIONS  |
+# +------------+
+source $DOTFILES/zsh/functions.zsh
+
+# +------------+
+# | SHOTCUTS   |
+# +------------+
+source $DOTFILES/zsh/shortcuts.zsh

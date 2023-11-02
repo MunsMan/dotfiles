@@ -1,11 +1,10 @@
-{ inputs, config, pkgs, ... }:
-let
-    username = "munsman";
-in {
+{ config, pkgs, ... }:
+
+{
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = username;
-  home.homeDirectory = "/Users/${username}";
+  home.username = "munsman";
+  home.homeDirectory = "/Users/munsman";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -18,7 +17,7 @@ in {
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
+  home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -35,11 +34,21 @@ in {
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    neovim
+    ripgrep
+    eza
+    erdtree
+    fd
+    bat
+    gh
+    du-dust
+    jq
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".config/nvim".source = non-nix/neovim;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -52,7 +61,7 @@ in {
     # '';
   };
 
-  # You can also manage environment variables but you will have to manually
+  # You can also manage environment variables but you cill have to manually
   # source
   #
   #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
@@ -61,24 +70,23 @@ in {
   #
   #  /etc/profiles/per-user/munsman/etc/profile.d/hm-session-vars.sh
   #
-  # if you don't want to manage your shell through Home Manager.
+  # if you don't cant to manage your shell through Home Manager.
   home.sessionVariables = {
     EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    plugins = with pkgs; [
-        inputs.self.packages.${pkgs.system}.munsman-nvim
-    ];
-  };
-  programs.bat = {
-    enable = true;
-  };
+
+  imports =  [
+    programs/tmux.nix
+    programs/alacritty.nix
+    programs/git.nix
+    programs/fzf.nix
+    programs/zoxide.nix
+    programs/direnv.nix
+    programs/starship.nix
+    programs/zsh.nix
+    programs/lazygit.nix
+  ];
 }
