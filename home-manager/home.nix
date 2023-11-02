@@ -35,6 +35,12 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
     neovim
+    # for neovim
+    nodejs_21
+    # lsp + formatter + linter   
+    nixfmt
+    nixpkgs-fmt
+
     ripgrep
     eza
     erdtree
@@ -71,14 +77,12 @@
   #  /etc/profiles/per-user/munsman/etc/profile.d/hm-session-vars.sh
   #
   # if you don't cant to manage your shell through Home Manager.
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  imports =  [
+  imports = [
     programs/tmux.nix
     programs/alacritty.nix
     programs/git.nix

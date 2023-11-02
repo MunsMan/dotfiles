@@ -26,6 +26,7 @@ return {
             css = { "prettier" },
             markdown = { "prettier" },
             json = { "prettier" },
+            nix = { "nixfmt", "nixpkgs_fmt" },
         },
         format_on_save = function(bufnr)
             -- Disable with a global or buffer-local variable
