@@ -10,5 +10,5 @@ direnv/
 git/
 tmux/
 zsh/
-nvim/
+nvim
 startship.toml
