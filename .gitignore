@@ -4,3 +4,11 @@ raycast/extensions
 raycast/config.json
 lazygit/state.yml
 clear_docs/
+
+alacritty/
+direnv/
+git/
+tmux/
+zsh/
+nvim/
+startship.toml
