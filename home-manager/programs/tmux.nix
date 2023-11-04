@@ -11,12 +11,34 @@ let
       sha256 = "00051slyy55qdxf0l41kfw6sr46nm2br31hdkwpy879ia5acligi";
     };
   };
+
+  tmux-nerd-font-window = pkgs.tmuxPlugins.mkTmuxPlugin {
+    pluginName = "tmux-nerd-font-window-name";
+    version = "unstable-2023-11-04";
+    rtpFilePath = "tmux-nerd-font-window-name.tmux";
+    src = pkgs.fetchFromGitHub {
+      owner = "joshmedeski";
+      repo = "tmux-nerd-font-window-name";
+      rev = "0b95ff04fc7e71dee8c0e8c590919d94ea130994";
+      sha256 = "sha256-4NDvAEpbrpWvYDE3G5nvUtDax9mtErpg8LRBj9suMx8=";
+    };
+    postInstall = ''
+      sed -i -e 's|yq|${pkgs.yq-go}/bin/yq|g' $target/bin/tmux-nerd-font-window-name
+    '';
+  };
+
 in
 {
+  home.file = {
+    ".config/tmux/tmux-nerd-font-window-name.yml".source =
+      ./../non-nix/tmux/tmux-nerd-font-window-name.yml;
+    ".config/tmux/gitmux.yml".source = ./../non-nix/tmux/gitmux.yml;
+  };
   programs.zsh.initExtra = ''
     export PATH=${t-smart-manager}/share/tmux-plugins/t-smart-tmux-session-manager/bin:$PATH
   '';
 
+  home.packages = with pkgs; [ gitmux ];
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
@@ -32,11 +54,24 @@ in
       set -g detach-on-destroy off
       set -g renumber-windows on
       set -g set-clipboard on
-      set -g status-left-length 200
-      set -g status-position top   
-      set -g status-right ""
       set -g set-titles on
       set -g set-titles-string "#W" 
+
+      set -g status-left-length 200    # increase length (from 10)
+      set -g status-left "#[fg=blue,bold]#S"
+      set -ga status-left " #[fg=white,nobold]#(${pkgs.gitmux} -cfg $HOME/.config/tmux/gitmux.yml)"
+      set -g status-position top       # macOS / darwin style
+      set -g status-right ""           # blank
+      set -g status-style 'bg=default' # transparent
+
+      set -g window-status-current-format '*#[fg=magenta]#W'
+      set -g window-status-format ' #[fg=gray]#W'
+
+
+      set -g mode-style bg=default,fg=yellow
+      set -g pane-active-border-style 'fg=magenta,bg=default'
+      set -g pane-border-style 'fg=brightblack,bg=default'
+
 
       bind '%' split-window -c '#{pane_current_path}' -h
       bind '"' split-window -c '#{pane_current_path}'
@@ -87,30 +122,24 @@ in
       bind-key -T copy-mode-vi 'C-l' select-pane -R
       bind-key -T copy-mode-vi 'v'   send-keys -X begin-selection
       bind-key -T copy-mode-vi 'Y' send-keys -X copy-pipe-and-cancel 'xclip -sel clip -i'
+      bind-key -T copy-mode-vi 'y' send-keys -X copy-selection-and-cancel
       bind-key x kill-pane # skip "kill-pane 1? (y/n)" prompt (cmd+w)
     '';
-    plugins = with pkgs.tmuxPlugins; [
-      onedark-theme
+    plugins = [
       {
         plugin = t-smart-manager;
         extraConfig = ''
-          set -g @t-fzf-prompt '  '
+          set -g @t-fzf-prompt '󰹰  '
           set -g @t-bind "T"
         '';
 
       }
       {
-        plugin = mkTmuxPlugin {
-          pluginName = "tmux-nerd-font-window-name";
-          version = "unstable-2023-09-16";
-          rtpFilePath = "tmux-nerd-font-window-name.tmux";
-          src = pkgs.fetchFromGitHub {
-            owner = "joshmedeski";
-            repo = "tmux-nerd-font-window-name";
-            rev = "f0bfaff2307f78dcc80db66fd54f39b3a603e0eb";
-            sha256 = "2JBdKVdHU5WvA2DtK4JXY8xKjvGF17pR/nylU8gmDnM=";
-          };
-        };
+        plugin = tmux-nerd-font-window;
+        extraConfig = ''
+          set -g @tmux-nerd-font-window-name-show-name false 
+          set -g @tmux-nerd-font-window-name-shell-icon '' 
+        '';
       }
     ];
   };

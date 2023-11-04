@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -45,7 +45,6 @@
     eza
     erdtree
     fd
-    bat
     gh
     du-dust
     jq
@@ -83,14 +82,15 @@
   programs.home-manager.enable = true;
 
   imports = [
-    programs/tmux.nix
     programs/alacritty.nix
-    programs/git.nix
-    programs/fzf.nix
-    programs/zoxide.nix
+    programs/bat.nix
     programs/direnv.nix
-    programs/starship.nix
-    programs/zsh.nix
+    programs/fzf.nix
+    programs/git.nix
     programs/lazygit.nix
+    programs/starship.nix
+    programs/tmux.nix
+    programs/zoxide.nix
+    programs/zsh.nix
   ];
 }

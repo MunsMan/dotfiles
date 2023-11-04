@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let ll = "${pkgs.eza}/bin/eza -alh";
+in {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -8,7 +10,7 @@
     initExtra = ''
       export PATH="/usr/local/sbin:$PATH"
 
-      function cd() { builtin cd "$@"; ll; } 
+      function cd() { builtin cd "$@"; ${ll}; } 
 
       function vpn-up() {
           echo "Starting the vpn ..."
@@ -36,10 +38,10 @@
       source_zsh = "source ~/.zshrc";
       c = "clear";
       f = "open -a Finder ./";
-      cat = "${pkgs.bat}";
-      ll = "${pkgs.eza} -alh";
-      ls = "${pkgs.eza}";
-      tree = "erd"; # Preferred "ls" implementation
+      cat = "${pkgs.bat}/bin/bat";
+      ll = ll;
+      ls = "${pkgs.eza}/bin/eza";
+      tree = "${pkgs.erdtree}/bin/erd"; # Preferred "ls" implementation
       less = "less -FSRXc";
       e = "exit";
       "~" = "cd ~";
