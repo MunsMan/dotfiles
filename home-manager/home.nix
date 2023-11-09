@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{ pkgs, ... }: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "munsman";
@@ -40,6 +38,7 @@
     # lsp + formatter + linter   
     nixfmt
     nixpkgs-fmt
+    jdk17
 
     ripgrep
     eza
@@ -48,6 +47,7 @@
     gh
     du-dust
     jq
+    jetbrains-mono
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -87,6 +87,7 @@
     programs/direnv.nix
     programs/fzf.nix
     programs/git.nix
+    programs/kitty.nix
     programs/lazygit.nix
     programs/starship.nix
     programs/tmux.nix

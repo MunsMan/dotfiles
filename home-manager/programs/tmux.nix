@@ -33,6 +33,7 @@ in
     ".config/tmux/tmux-nerd-font-window-name.yml".source =
       ./../non-nix/tmux/tmux-nerd-font-window-name.yml;
     ".config/tmux/gitmux.yml".source = ./../non-nix/tmux/gitmux.yml;
+    ".config/tmux/second_brain.sh".source = ./../non-nix/tmux/second_brain.sh;
   };
   programs.zsh.initExtra = ''
     export PATH=${t-smart-manager}/share/tmux-plugins/t-smart-tmux-session-manager/bin:$PATH
@@ -59,12 +60,11 @@ in
 
       set -g status-left-length 200    # increase length (from 10)
       set -g status-left "#[fg=blue,bold]#S"
-      set -ga status-left " #[fg=white,nobold]#(${pkgs.gitmux} -cfg $HOME/.config/tmux/gitmux.yml)"
+      set -ga status-left " #[fg=white,nobold]#(${pkgs.gitmux}/bin/gitmux -cfg $HOME/.config/tmux/gitmux.yml)"
       set -g status-position top       # macOS / darwin style
-      set -g status-right ""           # blank
       set -g status-style 'bg=default' # transparent
 
-      set -g window-status-current-format '*#[fg=magenta]#W'
+      set -g window-status-current-format '#[fg=magenta]#W'
       set -g window-status-format ' #[fg=gray]#W'
 
 
@@ -78,7 +78,7 @@ in
       bind c   new-window   -c '#{pane_current_path}'
       bind g   new-window   -n '' "${pkgs.lazygit}/bin/lazygit"
       bind d   new-window   -n '' lf
-      bind o   new-window   -n '' "$HOME/.local/scripts/tmux/second_brain.sh"
+      bind o   new-window   -n '' "$HOME/.config/tmux/second_brain.sh"
       bind f   copy-mode
       bind P   next-window
       bind h   select-pane  -L
