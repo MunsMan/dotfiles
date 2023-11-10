@@ -5,7 +5,7 @@
       add_newline = false;
       scan_timeout = 10;
       character = {
-        success_symbol = "[➜](bold green) ";
+        success_symbol = "[->](bold green) ";
         error_symbol = "[✗](bold red) ";
       };
       git_status = {
