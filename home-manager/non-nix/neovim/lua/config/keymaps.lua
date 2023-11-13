@@ -1,12 +1,8 @@
 -- colemak dh
-vim.keymap.set("n", "n", "j")
-vim.keymap.set("v", "n", "j")
-vim.keymap.set("n", "e", "k")
-vim.keymap.set("v", "e", "k")
-vim.keymap.set("n", "i", "l")
-vim.keymap.set("v", "i", "l")
-vim.keymap.set("n", "h", "h")
-vim.keymap.set("v", "h", "h")
+vim.keymap.set({ "n", "v" }, "n", "j")
+vim.keymap.set({ "n", "v" }, "e", "k")
+vim.keymap.set({ "n", "v" }, "i", "l")
+vim.keymap.set({ "n", "v" }, "h", "h")
 
 vim.keymap.set("n", "m", "i")
 vim.keymap.set("n", "M", "I")
@@ -42,3 +38,4 @@ vim.keymap.set({ "n", "v" }, "<leader>wh", "<cmd>vert split <cr>")
 vim.keymap.set({ "n", "v" }, "<leader>wi", "<cmd>vert split <cr><C-i>")
 
 vim.g.tmux_navigator_no_mappings = 1
+vim.g.kitty_navigator_no_mappings = 1

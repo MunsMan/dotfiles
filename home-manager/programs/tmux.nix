@@ -57,6 +57,7 @@ in
       set -g set-clipboard on
       set -g set-titles on
       set -g set-titles-string "#W" 
+      set -gq allow-passthrough
 
       set -g status-left-length 200    # increase length (from 10)
       set -g status-left "#[fg=blue,bold]#S"
@@ -66,7 +67,6 @@ in
 
       set -g window-status-current-format '#[fg=magenta]#W'
       set -g window-status-format ' #[fg=gray]#W'
-
 
       set -g mode-style bg=default,fg=yellow
       set -g pane-active-border-style 'fg=magenta,bg=default'
