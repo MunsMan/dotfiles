@@ -1,6 +1,7 @@
 { pkgs, ... }:
 let ll = "${pkgs.eza}/bin/eza -alh";
 in {
+  home.file.".config/zsh/dev-init.txt".source = ../non-nix/zsh/dev-init.txt;
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -32,6 +33,11 @@ in {
         if [[ $* =~ "upgrade" ]] || [[ $* =~ "update" ]] || [[ $* =~ "outdated" ]]; then
           sketchybar --trigger brew_update
         fi
+      }
+
+      function dev-init() {
+          ENV=$(cat ~/.config/zsh/dev-init.txt | ${pkgs.fzf}/bin/fzf)
+          nix flake init --template github:the-nix-way/dev-templates#$ENV
       }
     '';
     shellAliases = {

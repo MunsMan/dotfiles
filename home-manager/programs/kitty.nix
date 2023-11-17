@@ -5,8 +5,8 @@
     ".config/kitty/navigate_kitty.py".source =
       ../non-nix/kitty/navigate_kitty.py;
     ".config/kitty/ssh.conf".source = ../non-nix/kitty/ssh.conf;
-    ".config/kitty/kitty-scrollback.nvim/".source =
-      ../non-nix/kitty/kitty-scrollback.nvim;
+    ".config/kitty/session_manager.py".source =
+      ../non-nix/kitty/session_manager.py;
   };
   programs.zsh.shellAliases = {
     icat = "kitten icat";
@@ -23,12 +23,13 @@
     settings = {
       allow_remote_control = "yes";
       listen_on = "unix:/tmp/mykitty";
-      disable_ligatures = "never";
+      disable_ligatures = "cursor";
       window_margin_width = "0";
       window_padding_width = "2 2 4 2";
       hide_window_decorations = "titlebar-only";
       background_opacity = "0.9";
       shell_integration = "";
+      copy_on_select = "yes";
 
       # Colors
       foreground = "#abb2bf";
@@ -74,7 +75,7 @@
         "launch --type=overlay --cwd=current ${pkgs.lazygit}/bin/lazygit";
       "command+O" =
         "launch --type=overlay --cwd=~/obsidian/second-brain ${pkgs.neovim}/bin/nvim -c ObsidianToday";
-      "command+J" = "send_text all \\x02\\x54";
+      "command+J" = "kitten session-manager.py ${pkgs.fzf}/bin/fzf";
       "command+K" = "send_text all \\x02s";
       "command+L" = "send_text all \\x02L";
       "command+[" = "send_text all \\x02p";

@@ -76,7 +76,7 @@ return {
                 bib = { override = false },
             },
             mappings = {
-                MkdnEnter = { { "n", "v" }, "<CR>" },
+                MkdnEnter = false,
                 MkdnTab = false,
                 MkdnSTab = false,
                 MkdnNextLink = { "n", "<Tab>" },
@@ -85,9 +85,9 @@ return {
                 MkdnPrevHeading = { "n", "[[" },
                 MkdnGoBack = false,
                 MkdnGoForward = false,
-                MkdnCreateLink = false, -- see MkdnEnter
+                MkdnCreateLink = { { "n", "v" }, "<leader>nl" }, -- see MkdnEnter
                 MkdnCreateLinkFromClipboard = false, -- see MkdnEnter
-                MkdnFollowLink = false, -- see MkdnEnter
+                MkdnFollowLink = { { "n" }, "<CR>" }, -- see MkdnEnter
                 MkdnDestroyLink = false,
                 MkdnTagSpan = { "v", "<M-CR>" },
                 MkdnMoveSource = { "n", "<C-R>" },

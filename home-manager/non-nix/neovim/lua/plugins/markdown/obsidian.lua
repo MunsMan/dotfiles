@@ -97,21 +97,9 @@ return {
         },
         { "<leader>nd", "<cmd>ObsidianToday<cr>", desc = "open today's note" },
         { "<leader>ns", "<cmd>ObsidianSearch<cr>", desc = "note text search" },
-        {
-            "<leader>nl",
-            "<cmd>ObsidianFollowLink<cr>",
-            desc = "open link",
-            mode = { "v", "n" },
-        },
         { "<leader>nb", "<cmd>ObsidianBacklinks<cr>", desc = "note text search" },
         { "<leader>no", "<cmd>ObsidianOpen<cr>", desc = "open note in obsidian" },
         { "<leader>nf", "<cmd>ObsidianQuickSwitch<cr>", desc = "open note" },
-        {
-            "<leader>nc",
-            "<cmd>ObsidianLinkNew<cr>",
-            desc = "create new link",
-            mode = { "v", "n" },
-        },
     },
     cmd = { "ObsidianToday" },
 }

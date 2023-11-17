@@ -1,7 +1,9 @@
 return {
     "edluffy/hologram.nvim",
-    ft = "markdown",
     opts = {
-        auto_display = true
-    }
+        auto_display = true,
+    },
+    keys = {
+        { "<leader>ci", desc = { "Start Hologram" } },
+    },
 }

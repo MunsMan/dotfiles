@@ -14,6 +14,7 @@ vim.keymap.set({ "n", "v" }, "F", "E", { desc = "jump to end of String" })
 vim.keymap.set("n", "N", "mzJ`z", { desc = "Append following with cursor in front" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-i>", "<C-;>", { desc = "Jump List up" })
 vim.keymap.set("n", "N", "nzzzv", { desc = "next Search Element Centered" })
 vim.keymap.set("n", "E", "Nzzzv", { desc = "previous Search Element Centered" })
 
