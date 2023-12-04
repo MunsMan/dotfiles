@@ -10,7 +10,7 @@
       };
       git_status = {
         conflicted = "  ";
-        deleted = " 󰆴×$count";
+        deleted = " 󰆴 ×$count";
         modified = "  ×$count";
         stashed = "  ×$count";
         staged = "  ×$count";
