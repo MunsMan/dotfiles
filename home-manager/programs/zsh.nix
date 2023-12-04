@@ -6,6 +6,7 @@ in {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    defaultKeymap = null;
     syntaxHighlighting.enable = true;
     dotDir = ".config/zsh";
     initExtra = ''
