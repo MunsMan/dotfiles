@@ -48,6 +48,11 @@
     du-dust
     jq
     jetbrains-mono
+    mdcat
+
+    # for macOS
+    mas
+    darwin.trash
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -89,10 +94,10 @@
     programs/direnv.nix
     programs/fzf.nix
     programs/git.nix
-    programs/kitty.nix
     programs/lazygit.nix
     programs/starship.nix
     programs/tmux.nix
+    programs/wezterm.nix
     programs/zoxide.nix
     programs/zsh.nix
   ];
