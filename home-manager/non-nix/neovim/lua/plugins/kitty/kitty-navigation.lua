@@ -1,5 +1,6 @@
 return {
     "MunsMan/kitty-navigator.nvim",
+    enabled = false,
     opts = {
         keybindings = {
             left = "<C-h>",

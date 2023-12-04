@@ -1,36 +1,43 @@
 return {
-    'stevearc/oil.nvim',
+    "stevearc/oil.nvim",
     lazy = false,
     opts = {
         default_file_explorer = true,
         columns = {
-            'icon',
+            "icon",
             -- "permissions",
             -- "size",
             -- "mtime",
         },
         skip_confirm_for_simple_edits = true,
         view_options = {
-            show_hidden = true
+            show_hidden = true,
         },
         float = {
             padding = 10,
             win_options = {
-                winblend = 5
+                winblend = 5,
             },
-            border = "rounded"
+            border = "rounded",
         },
         preview = {
-            width = 0.4
+            width = 0.4,
         },
         keymaps = {
-            ['<C-n>'] = 'actions.select_split',
-            ['<C-l>'] = 'actions.select_vsplit'
-        }
+            ["<C-n>"] = "actions.select_split",
+            ["<C-i>"] = "actions.select_vsplit",
+        },
     },
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
-        { "<leader>e", function() require('oil').toggle_float() end, desc = 'Open Oil', mode = { 'n', 'v' } }
-    }
+        {
+            "<leader>e",
+            function()
+                require("oil").toggle_float()
+            end,
+            desc = "Open Oil",
+            mode = { "n", "v" },
+        },
+    },
 }

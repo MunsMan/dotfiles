@@ -1,7 +1,5 @@
 return {
     "nvim-telescope/telescope.nvim",
-    -- tag = "0.1.1",
-    -- or                              , branch = '0.1.1',
     dependencies = { "nvim-lua/plenary.nvim" },
     lazy = true,
     cmd = "Telescope",
@@ -10,6 +8,18 @@ return {
         defaults = {
             prompt_prefix = " ",
             selection_caret = " ",
+            mappings = {
+                i = {
+                    ["<C-i>"] = require("telescope.actions").select_vertical,
+                    ["<C-h>"] = require("telescope.actions").select_horizontal,
+                },
+                n = {
+                    ["<C-i>"] = require("telescope.actions").select_vertical,
+                    ["<C-h>"] = require("telescope.actions").select_horizontal,
+                    ["n"] = require("telescope.actions").move_selection_next,
+                    ["e"] = require("telescope.actions").move_selection_previous,
+                },
+            },
         },
     },
     keys = {

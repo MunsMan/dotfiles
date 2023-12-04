@@ -6,14 +6,21 @@ return {
         transparent = true,
         style = "deep",
         lualine = {
-            transparent = true
+            transparent = true,
+        },
+        code_style = {
+            comments = "italic",
+            keywords = "none",
+            functions = "none",
+            strings = "none",
+            variables = "none",
         },
         diagnostics = {
-            background = false
-        }
+            background = false,
+        },
     },
     config = function(_, opts)
-        require('onedark').setup(opts)
+        require("onedark").setup(opts)
         vim.cmd([[colorscheme onedark]])
-    end
+    end,
 }
