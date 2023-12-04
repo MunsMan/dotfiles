@@ -8,10 +8,10 @@
     ".config/kitty/session_manager.py".source =
       ../non-nix/kitty/session_manager.py;
   };
-  programs.zsh.shellAliases = {
-    icat = "kitten icat";
-    ssh = "kitten ssh";
-  };
+  # programs.zsh.shellAliases = {
+  #   icat = "kitten icat";
+  #   ssh = "kitten ssh";
+  # };
   programs.kitty = {
     enable = true;
     font = {
