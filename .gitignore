@@ -1,13 +1,9 @@
-**/node_modules/
-raycast/extensions
-raycast/config.json
-lazygit/state.yml
-clear_docs/
+# Ignore everything
+*
 
-alacritty/
-direnv/
-git/
-tmux/
-zsh/
-nvim
-startship.toml
+# But not these directories
+# Include subdirectories
+!home-manager/**
+!nix-darwin/**
+
+
