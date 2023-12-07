@@ -97,6 +97,6 @@
     modules/programs/zoxide.nix
     # modules/programs/starship.nix
     modules/starship
-    modules/shells/zsh/zsh.nix
+    modules/zsh
   ];
 }
