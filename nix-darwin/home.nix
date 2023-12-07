@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "munsman";
-  home.homeDirectory = "/Users/munsman";
+  # home.username = "munsman";
+  # home.homeDirectory = "/Users/munsman";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -89,16 +89,13 @@
   programs.home-manager.enable = true;
 
   imports = [
-    programs/alacritty.nix
-    programs/bat.nix
-    programs/direnv.nix
-    programs/fzf.nix
-    programs/git.nix
-    programs/lazygit.nix
-    programs/starship.nix
-    programs/tmux.nix
-    programs/wezterm.nix
-    programs/zoxide.nix
-    programs/zsh.nix
+    ./modules/programs/bat.nix
+    ./modules/programs/direnv.nix
+    ./modules/programs/fzf.nix
+    ./modules/programs/git.nix
+    ./modules/programs/lazygit.nix
+    ./modules/shell/starship.nix
+    ./modules/programs/zoxide.nix
+    ./modules/shell/zsh.nix
   ];
 }

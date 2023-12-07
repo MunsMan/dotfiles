@@ -11,22 +11,24 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, ... }: {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#mbp
-    darwinConfigurations."mbp" = nix-darwin.lib.darwinSystem {
-      modules = [
-        ./configuration.nix
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.munsman = { imports = [ ./home.nix ]; };
-        }
-      ];
-    };
+  outputs = { self, nix-darwin, nixpkgs, home-manager, ... }:
+    let user = "munsman";
+    in {
+      # Build darwin flake using:
+      # $ darwin-rebuild build --flake .#mbp
+      darwinConfigurations."mbp" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.${user} = import ./home.nix;
+          }
+        ];
+      };
 
-    # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."mbp".pkgs;
-  };
+      # Expose the package set, including overlays, for convenience.
+      darwinPackages = self.darwinConfigurations."mbp".pkgs;
+    };
 }
