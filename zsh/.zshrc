@@ -1,1 +1,0 @@
-/nix/store/s47rlff86zb6v4z3s1g207xsrvywgq5z-home-manager-files/.config/zsh/.zshrc

@@ -1,9 +1,0 @@
-# Ignore everything
-*
-
-# But not these directories
-# Include subdirectories
-!home-manager/**
-!nix-darwin/**
-
-
