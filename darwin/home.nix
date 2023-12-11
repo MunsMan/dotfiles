@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-let users = import ./users.nix;
-in {
+{ pkgs, ... }: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   # home.username = "munsman";
