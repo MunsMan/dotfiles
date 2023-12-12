@@ -4,28 +4,31 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     darwin.url = "github:lnl7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { nixpkgs, home-manager, darwin, ... }: {
-    darwinConfigurations = {
-      mbp = darwin.lib.darwinSystem {
-        system = "x86_64-darwin";
-        modules = [
-          ./configuration.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.munsman = import ./home.nix;
-
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
-        ];
-      };
-    };
-  };
+  outputs = { nixpkgs, darwin, home-manager, utils, ... }:
+    utils.lib.eachSystem [ "x86_64-darwin" ] (system:
+      let
+        pkgs = import nixpkgs { inherit system; };
+        darwinConfig =
+          import ./configuration.nix { inherit system pkgs darwin; };
+        homeManagerConfig =
+          import ./home.nix { inherit system pkgs home-manager; };
+      in
+      {
+        darwinConfigurations = {
+          mbp = darwin.lib.darwinSystem {
+            inherit pkgs system;
+            modules = [ darwinConfig ];
+          };
+        };
+        homeConfigurations = {
+          mbp-home = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [ homeManagerConfig ];
+          };
+        };
+      });
 }

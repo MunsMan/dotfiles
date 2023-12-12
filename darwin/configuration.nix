@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   environment.darwinConfig = "$HOME/.config/darwin/configuration.nix";
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -21,16 +21,16 @@
   imports = [ darwin/sketchybar ];
 
   # Homebrew packages to be installed in addition to the packages provided
-  homebrew = {
-    enable = true;
-    onActivation = {
-      autoUpdate = false;
-      upgrade = false;
-      cleanup = "zap";
-    };
-    brews = [ "wireguard-tools" ];
-    casks = [ "moonlight" "plex-media-player" ];
-  };
+  # homebrew = {
+  #   enable = true;
+  #   onActivation = {
+  #     autoUpdate = false;
+  #     upgrade = false;
+  #     cleanup = "zap";
+  #   };
+  #   brews = [ "wireguard-tools" ];
+  #   casks = [ "moonlight" "plex-media-player" ];
+  # };
 
   nix = {
     package = pkgs.nix;
@@ -45,7 +45,4 @@
   system.stateVersion = 4;
 
   system.defaults = { dock.autohide = true; };
-
-  # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = "x86_64-darwin";
 }
