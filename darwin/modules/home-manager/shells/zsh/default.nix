@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let ll = "${pkgs.eza}/bin/eza -alh";
 in {
-  # home.file.".config/zsh/dev-init.txt".source = ./dev-init.txt;
+  home.file.".config/zsh/dev-init.txt".source = ./dev-init.txt;
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;

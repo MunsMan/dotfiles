@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, vars, ... }: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  # home.username = "munsman";
-  # home.homeDirectory = "/Users/munsman";
+  home.username = "${vars.username}";
+  home.homeDirectory = "/Users/${vars.username}";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -49,17 +49,13 @@
     jq
     jetbrains-mono
     mdcat
-
-    # for macOS
-    mas
-    darwin.trash
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/nvim".source = modules/editors/neovim;
-    ".vimrc".source = modules/editors/vim/.vimrc;
+    ".config/nvim".source = ./editors/neovim;
+    ".vimrc".source = ./editors/vim/.vimrc;
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -83,20 +79,20 @@
   #  /etc/profiles/per-user/munsman/etc/profile.d/hm-session-vars.sh
   #
   # if you don't cant to manage your shell through Home Manager.
-  home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = { EDITOR = "${vars.editor}"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   imports = [
-    modules/programs/bat.nix
-    modules/programs/direnv.nix
-    modules/programs/fzf.nix
-    modules/programs/git.nix
-    modules/programs/lazygit.nix
-    modules/programs/zoxide.nix
-    # modules/programs/starship.nix
-    modules/starship
-    modules/shells/zsh
+    ./programs/bat.nix
+    ./programs/direnv.nix
+    ./programs/fzf.nix
+    ./programs/git.nix
+    ./programs/lazygit.nix
+    ./programs/zoxide.nix
+    ./programs/starship.nix
+    ./starship
+    ./shells/zsh
   ];
 }
