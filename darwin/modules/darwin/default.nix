@@ -41,16 +41,28 @@
   yabai.enable = true;
 
   # Homebrew packages to be installed in addition to the packages provided
-  # homebrew = {
-  #   enable = true;
-  #   onActivation = {
-  #     autoUpdate = false;
-  #     upgrade = false;
-  #     cleanup = "zap";
-  #   };
-  #   brews = [ "wireguard-tools" ];
-  #   casks = [ "moonlight" "plex-media-player" ];
-  # };
+  homebrew = {
+    enable = true;
+    onActivation = {
+      autoUpdate = false;
+      upgrade = false;
+      cleanup = "zap";
+    };
+    brews = [ "openvpn" ];
+    casks = [
+      "arc"
+      "discord"
+      "wezterm"
+      "whatsapp"
+      "obsidian"
+      "sf-symbols"
+      "microsoft-word"
+      "skim"
+      "macs-fan-control"
+      "karabiner-elements"
+      "raycast"
+    ];
+  };
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
