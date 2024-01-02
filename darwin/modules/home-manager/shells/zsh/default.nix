@@ -2,7 +2,7 @@
 let ll = "${pkgs.eza}/bin/eza -alh";
 in {
   home.file.".config/zsh/dev-init.txt".source = ./dev-init.txt;
-  programs.programs.zsh = {
+  programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
