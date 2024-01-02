@@ -2,7 +2,7 @@
 let ll = "${pkgs.eza}/bin/eza -alh";
 in {
   home.file.".config/zsh/dev-init.txt".source = ./dev-init.txt;
-  programs.zsh = {
+  programs.programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
@@ -16,7 +16,7 @@ in {
 
       function vpn-up() {
           echo "Starting the vpn ..."
-          (echo "$(sudo cat ~/.secrets/vpn/lfu_vpn.txt)" | sudo openconnect vpn.uibk.ac.at --background --protocol=anyconnect --user=csaw8595 --passwd-on-stdin) >> /dev/null
+          (echo "$(sudo cat ~/.secrets/vpn/lfu_vpn.txt)" | sudo ${pkgs.openconnect} vpn.uibk.ac.at --background --protocol=anyconnect --user=csaw8595 --passwd-on-stdin) >> /dev/null
       }
 
       function vpn-down(){
