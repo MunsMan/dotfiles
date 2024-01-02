@@ -43,12 +43,13 @@
   # Homebrew packages to be installed in addition to the packages provided
   homebrew = {
     enable = true;
+    global = { autoUpdate = false; };
     onActivation = {
-      autoUpdate = false;
-      upgrade = false;
+      autoUpdate = true;
+      upgrade = true;
       cleanup = "zap";
     };
-    brews = [ "openvpn" ];
+    brews = [ "openvpn" "podman" ];
     casks = [
       "arc"
       "discord"
