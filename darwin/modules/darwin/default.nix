@@ -21,7 +21,13 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [ vim jq darwin.trash lazygit ];
+  environment.systemPackages = with pkgs; [
+    vim
+    jq
+    darwin.trash
+    lazygit
+    openconnect
+  ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
@@ -49,7 +55,7 @@
       upgrade = true;
       cleanup = "zap";
     };
-    brews = [ "openvpn" "podman" ];
+    brews = [ "podman" ];
     casks = [
       "arc"
       "discord"

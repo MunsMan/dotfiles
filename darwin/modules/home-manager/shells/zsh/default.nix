@@ -16,7 +16,7 @@ in {
 
       function vpn-up() {
           echo "Starting the vpn ..."
-          (echo "$(sudo cat ~/.secrets/vpn/lfu_vpn.txt)" | sudo ${pkgs.openconnect} vpn.uibk.ac.at --background --protocol=anyconnect --user=csaw8595 --passwd-on-stdin) >> /dev/null
+          (echo "$(sudo cat ~/.secrets/vpn/lfu_vpn.txt)" | sudo ${pkgs.openconnect}/bin/openconnect vpn.uibk.ac.at --background --protocol=anyconnect --user=csaw8595 --passwd-on-stdin) >> /dev/null
       }
 
       function vpn-down(){
@@ -42,7 +42,7 @@ in {
       }
     '';
     shellAliases = {
-      source_zsh = "source ~/.zshrc";
+      source_zsh = "source ~/.zshenv";
       c = "clear";
       f = "open -a Finder ./";
       cat = "${pkgs.bat}/bin/bat";
