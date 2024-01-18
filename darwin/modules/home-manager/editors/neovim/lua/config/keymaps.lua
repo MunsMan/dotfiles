@@ -20,7 +20,7 @@ vim.keymap.set("n", "E", "Nzzzv", { desc = "previous Search Element Centered" })
 
 vim.keymap.set("n", "U", "<C-r>", {})
 
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { desc = "Git Commands" })
 
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Replace without replacing item" })
 vim.keymap.set("n", "<leader>y", '"+y', { desc = "Copy to clipboard" })
