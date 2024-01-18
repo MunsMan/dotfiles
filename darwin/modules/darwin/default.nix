@@ -59,6 +59,7 @@
     casks = [
       "arc"
       "discord"
+      "zoom"
       "wezterm"
       "whatsapp"
       "obsidian"
