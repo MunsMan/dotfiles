@@ -65,6 +65,7 @@
       "obsidian"
       "sf-symbols"
       "microsoft-word"
+      "microsoft-powerpoint"
       "skim"
       "macs-fan-control"
       "karabiner-elements"
