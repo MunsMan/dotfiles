@@ -44,7 +44,7 @@ in {
     shellAliases = {
       source_zsh = "source ~/.zshenv";
       c = "clear";
-      f = "open -a Finder ./";
+      f = "open -a Finder";
       cat = "${pkgs.bat}/bin/bat";
       ll = ll;
       ls = "${pkgs.eza}/bin/eza";
