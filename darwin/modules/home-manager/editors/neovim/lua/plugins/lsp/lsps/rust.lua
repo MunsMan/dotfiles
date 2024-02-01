@@ -31,7 +31,6 @@ return {
         },
     },
     setup = function(opts)
-        print("rust options", opts)
         require("lspconfig").rust_analyzer.setup(opts)
     end,
 }
