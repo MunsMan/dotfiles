@@ -18,6 +18,7 @@ return {
                         [","] = "left",
                     }
                 end,
+                jump_labels = true,
             },
         },
         jump = {
