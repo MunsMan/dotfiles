@@ -55,17 +55,13 @@
       upgrade = true;
       cleanup = "zap";
     };
-    brews = [ "podman" ];
+    brews = [ ];
     casks = [
       "arc"
       "discord"
-      "zoom"
       "wezterm"
       "whatsapp"
       "obsidian"
-      "sf-symbols"
-      "microsoft-word"
-      "microsoft-powerpoint"
       "skim"
       "macs-fan-control"
       "karabiner-elements"
