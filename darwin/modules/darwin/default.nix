@@ -59,13 +59,14 @@
     casks = [
       "arc"
       "discord"
+      "karabiner-elements"
+      "macs-fan-control"
+      "obsidian"
+      "raycast"
+      "sf-symbols"
+      "skim"
       "wezterm"
       "whatsapp"
-      "obsidian"
-      "skim"
-      "macs-fan-control"
-      "karabiner-elements"
-      "raycast"
     ];
   };
 
