@@ -58,7 +58,9 @@
     brews = [ ];
     casks = [
       "arc"
+      "balenaetcher"
       "discord"
+      "figma"
       "karabiner-elements"
       "macs-fan-control"
       "obsidian"
