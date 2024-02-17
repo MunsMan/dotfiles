@@ -55,7 +55,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/nvim".source = ./editors/neovim;
+    ".config/nvim".source = ./editors/nvim;
     ".vimrc".source = ./editors/vim/.vimrc;
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in

@@ -1,0 +1,3 @@
+[submodule "darwin/modules/home-manager/editors/nvim"]
+	path = darwin/modules/home-manager/editors/nvim
+	url = https://github.com/munsman/nvim
