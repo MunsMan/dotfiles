@@ -60,6 +60,7 @@
       "arc"
       "balenaetcher"
       "discord"
+      "docker"
       "figma"
       "karabiner-elements"
       "macs-fan-control"

@@ -5,14 +5,15 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     darwin.url = "github:lnl7/nix-darwin";
     home-manager.url = "github:nix-community/home-manager";
+    nvimConfig = { url = "github:munsman/nvim"; flake=false;}; 
   };
 
-  outputs = { nixpkgs, darwin, home-manager, ... }:
+  outputs = { nixpkgs, darwin, home-manager, nvimConfig, ... }:
     let
       pkgs = import nixpkgs { inherit system; };
       darwinConfig = import ./modules/darwin { inherit system pkgs vars; };
       homeManagerConfig =
-        import ./modules/home-manager { inherit system pkgs vars; };
+        import ./modules/home-manager { inherit system pkgs vars nvimConfig; };
       system = "x86_64-darwin";
       vars = {
         username = "munsman";

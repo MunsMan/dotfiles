@@ -1,4 +1,5 @@
-{ pkgs, vars, ... }: {
+{ pkgs, vars, nvimConfig, ... }: 
+{
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "${vars.username}";
@@ -55,7 +56,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/nvim".source = ./editors/nvim;
+    ".config/nvim".source = nvimConfig;
     ".vimrc".source = ./editors/vim/.vimrc;
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in

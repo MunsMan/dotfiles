@@ -4,7 +4,7 @@ in {
   home.file.".config/zsh/dev-init.txt".source = ./dev-init.txt;
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     defaultKeymap = null;
     syntaxHighlighting.enable = true;
