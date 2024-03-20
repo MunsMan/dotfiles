@@ -55,7 +55,7 @@
       upgrade = true;
       cleanup = "zap";
     };
-    brews = [ ];
+    brews = [ "llvm" ];
     casks = [
       "arc"
       "balenaetcher"
