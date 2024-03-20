@@ -14,26 +14,26 @@ HELPER=git.felix.helper
 killall helper
 (cd $CONFIG_DIR/helper && make)
 $CONFIG_DIR/helper/helper $HELPER > /dev/null 2>&1 &
-#
-# # Unload the macOS on screen indicator overlay for volume change
-# launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
+
+# Unload the macOS on screen indicator overlay for volume change
+launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /dev/null 2>&1 &
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=35
+  height=31
   color=$BAR_COLOR
+  border_width=1
+  border_color=$BAR_BORDER_COLOR
   shadow=off
+  padding_right=15
+  padding_left=15
+  corner_radius=9
+  y_offset=3
+  margin=10
   position=top
   sticky=on
-  padding_right=10
-  padding_left=10
-  y_offset=4
-  margin=10
   topmost=window
-  corner_radius=9
-  blur_radius=20
 )
-
 
 sketchybar --bar "${bar[@]}"
 
@@ -59,32 +59,31 @@ defaults=(
   popup.background.color=$POPUP_BACKGROUND_COLOR
   popup.blur_radius=20
   popup.background.shadow.drawing=on
-  scroll_texts=on
 )
 
 sketchybar --default "${defaults[@]}"
 
 # Left
 source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/yabai.sh"
-# source "$ITEM_DIR/front_app.sh"
+source "$ITEM_DIR/app_space.sh"
+# source "$ITEM_DIR/spaces.sh"
+# source "$ITEM_DIR/yabai.sh"
+source "$ITEM_DIR/front_app.sh"
 
 # Center
-# source "$ITEM_DIR/spotify.sh"
-# source "$ITEM_DIR/media.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
 source "$ITEM_DIR/brew.sh"
+# source "$ITEM_DIR/wifi.sh"
+source "$ITEM_DIR/network.sh"
+source "$ITEM_DIR/mic.sh"
 # source "$ITEM_DIR/github.sh"
-source "$ITEM_DIR/wifi.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"
+source "$ITEM_DIR/bracket.sh"
 source "$ITEM_DIR/cpu.sh"
-# source "$ITEM_DIR/svim.sh"
-
-sketchybar --hotload on
+# source "$ITEM_DIR/pomo.sh"
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
