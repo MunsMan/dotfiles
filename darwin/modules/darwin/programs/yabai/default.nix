@@ -10,6 +10,7 @@ with lib; {
   config = mkIf config.yabai.enable {
     services.yabai = {
       enable = true;
+      enableScriptingAddition = true;
       package = pkgs.yabai;
       config = {
 
@@ -19,18 +20,13 @@ with lib; {
         window_placement = "second_child";
         window_topmost = "off";
         window_shadow = "off";
-        window_opacity_duration = "0.0";
+        window_opacity = "on";
         active_window_opacity = "1.0";
-        normal_window_opacity = "1.0";
-        window_border_blur = "off";
-        window_border = "on";
-        window_border_width = "3";
-        active_window_border_color = "0xff775759";
-        normal_window_border_color = "0xff555555";
+        normal_window_opacity = "0.90";
         insert_feedback_color = "0xffd75f5f";
         split_ratio = "0.50";
         auto_balance = "off";
-        mouse_modifier = "cmd";
+        mouse_modifier = "alt";
         mouse_action1 = "move";
         mouse_action2 = "resize";
         mouse_drop_action = "swap";
@@ -41,7 +37,7 @@ with lib; {
         left_padding = "10";
         right_padding = "10";
         window_gap = "6";
-        external_bar = "main:30:0";
+        external_bar = "main:35:0";
       };
       extraConfig = ''
         yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus recent || yabai -m window --focus first"
