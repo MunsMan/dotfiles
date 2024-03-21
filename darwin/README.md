@@ -8,7 +8,7 @@ The basic system configuration is managed by [nix-darwin](), and per user config
 
 ## Nix Darwin
 
-Nix Darwin is a based on the nix package repository and tries to provide a similar experions like NixOS for macOS.
+Nix Darwin is a based on the nix package repository and tries to provide a similar experience like NixOS for macOS.
 
 In my setup Nix Darwin manages:
 
@@ -16,6 +16,28 @@ In my setup Nix Darwin manages:
 - [yabai]()
 - [skhd]()
 - [homebrew]()
+
+### Global Fonts
+
+To install fonts, including the pure font files doesn't work.
+Instead, the font needs to be installed and then linked from `nix-darwin` into the system font directory.
+To do so, the following steps are necessary:
+
+1. enable font management
+
+```nix
+{
+    fonts.fontDir.enable = true;
+}
+```
+
+2. Install the font
+
+```nix
+{
+    fonts.fonts = with pkgs; [ <font> ];
+}
+```
 
 ## Home Manager
 
