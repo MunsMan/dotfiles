@@ -1,36 +1,32 @@
-{ pkgs, lib }:
+{ pkgs }:
 
-pkgs.stdenv.mkDerivation rec {
+pkgs.stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "sketchybar-app-font";
-  version = "0.1.0";
+  version = "2.0.13";
 
-  src = lib.fetchFromGitHub {
-    owner = "kvndrsslr";
-    repo = pname;
-    rev =
-      "master"; # You might want to pin this to a specific commit or tag for reproducibility
-    sha256 =
-      "0"; # Replace with the correct sha256 of the repo for security and reproducibility
+  src = pkgs.fetchurl {
+    url =
+      "https://github.com/kvndrsslr/sketchybar-app-font/releases/download/v${finalAttrs.version}/sketchybar-app-font.ttf";
+    sha256 = "sha256-V4VD0EpMKTN56HMvpmLSldtjs7L6ar61pwxVwUrE6/8=";
   };
 
-  buildInputs = with pkgs; [ nodejs_21 nodePackages.pnpm ];
-
-  unpackPhase = "true";
-
-  buildPhase = ''
-    cd $src
-    pnpm install
-    pnpm run build:install
-  '';
+  dontUnpack = true;
 
   installPhase = ''
-    echo "No installation needed."
+    runHook preInstall
+
+    install -Dm644 $src $out/share/fonts/sketchybar-app-font.ttf
+
+    runHook postInstall
   '';
 
   meta = {
-    description = "Nix build for sketchybar-app-font project";
-    homepage = "https://github.com/kvndrsslr/sketchybar-app-font";
-    license = pkgs.stdenv.lib.licenses.mit; # Adjust the license accordingly
+    description =
+      "A ligature-based symbol font and a mapping function for sketchybar";
+    longDescription = ''
+      A ligature-based symbol font and a mapping function for sketchybar, inspired by simple-bar's usage of community-contributed minimalistic app icons.
+    '';
+    license = pkgs.lib.licenses.cc0; # Adjust the license accordingly
   };
-}
+})
 
